@@ -1,0 +1,127 @@
+
+<h1>Register Customer</h1>
+
+<div class="container">
+  <h1 style="text-align: center;">Create Contractor Account</h1>
+
+  <form #recievedUser="ngForm">
+    
+      <div class="row  justify-content-center">
+          <div class="col-6">
+    <label for="email">Email</label>
+    <input type="text" class="form-control" id="email" placeholder="johndoe@example.com" [(ngModel)]="user.email" name="email">
+  </div>
+
+    <div class="row  justify-content-center">
+      <div class="col-6">
+    <label for="userName">Username</label>
+    <input type="text" class="form-control" id="userName" placeholder="username" [(ngModel)]="user.userName" name="email">
+    </div>
+  
+  </div>
+  <div class="row  justify-content-center">
+      <div class="col-6">
+    <label for="password">Password</label>
+    <input type="text" class="form-control" id="password" placeholder="********" [(ngModel)]="user.password" name="password">
+      </div>
+  </div>
+ 
+      <div class="row  justify-content-center">
+          <div class="col-6">
+    <label for="fname">First Name</label>
+    <input type="text" class="form-control" id="fname" placeholder="First Name"   [(ngModel)]="user.firstName" name="fname">
+  </div>
+  </div>
+
+  <div class="row  justify-content-center">
+      <div class="col-6">
+    <label for="lname">Last Name</label>
+    <input type="text" class="form-control" id="lname" placeholder="Last Name" [(ngModel)]="user.lastName" name="lname">
+  </div>
+  </div>
+
+  <div class="row  justify-content-center">
+    <div class="col-6">
+  <label for="role">Role</label>
+  <input type="text" class="form-control" id="role" placeholder="Role" [(ngModel)]="user.userRole" name="lname">
+</div>
+</div>
+  <div class="row  justify-content-center">
+      <div class="col-6">
+    <label for="city">City</label>
+    <input type="city" class="form-control" id="city" placeholder="City"  [(ngModel)]="user.address" name="city">
+  </div>
+  </div>
+  <br>
+  <br>
+  <div class="row justify-content-center">
+  <div class="col-8">
+      <label for="aboutme">About Me</label>
+        <textarea class="form-control" rows="5" cols="80" id="aboutme"></textarea>
+      </div>
+  </div>
+  <br>
+  <br>
+  <div class="row justify-content-center">
+      <div class="col-6">
+          <h3>What services do you offer?</h3>
+          <!-- <label for="text">Service Description</label> -->
+          <input type="checkbox" id="groom" name="groom" value="groom">
+          <label for="groom">Pet Grooming</label><br>
+          <input type="checkbox" id="walk" name="walk" value="walk">
+          <label for="walk">Dog Walking</label><br>
+          <input type="checkbox" id="sit" name="sit" value="sit">
+          <label for="sit">Pet Sitting</label><br>
+      </div>
+  </div>
+    
+    
+    <!-- <input type="textarea" class="form-control" id="aboutme" placeholder="Type here"  name="aboutMe"> -->
+  
+     <br>
+     <div class="row">
+       <input type="checkbox" id="terms" name="terms" value="terms">
+       <label for="terms">By creating this account, I acknowledge that I have read and agree to the Animal Haus Terms and Conditions.</label>
+     </div>
+     <div class="row justify-content-center">
+         <div class="col-6">
+    <button type="button" class="btn btn-success" (click)="addCustomer()">Create Account</button>
+  </div>
+  </div>
+  
+</div>
+  </form>
+</div>
+
+
+<!-- <h1>Register Contractor</h1>
+<form #recievedUser="ngForm">
+
+  <label for="name">firstName</label>
+  <input type="text" class="form-control" id="fName" placeholder="user fname" [(ngModel)]="user.firstName" name="firstName">
+  
+  <label for="name">lastName</label>
+  <input type="text" class="form-control" id="lNname" placeholder="user lname" [(ngModel)]="user.lastName" name="lastName">
+  
+
+  <label for="type">username</label>
+  <input type="text" class="form-control" id="type" placeholder="type name" [(ngModel)]="user.userName" name="name">
+
+  <label for="password">Password</label>
+  <input type="password" class="form-control" id="password" placeholder="password" [(ngModel)]="user.password" name="password">
+
+  <label for="role">Role</label>
+  <input type="role" class="form-control" id="role" placeholder="role" [(ngModel)]="user.userRole" name="role">
+
+  <label for="email">Email</label>
+  <input type="email" class="form-control" id="email" placeholder="email" [(ngModel)]="user.email" name="email">
+
+  <label for="address">Address</label>
+  <input type="address" class="form-control" id="address" placeholder="address" [(ngModel)]="user.address" name="address">
+  <label for="text">About Me</label>
+  <input type="text" class="form-control" id="aboutme" placeholder="address" [(ngModel)]="user.aboutme" name="aboutMe">
+
+   <br>
+  <button type="button" class="btn btn-success" (click)="addCustomer()">Save</button>
+</form> -->
+
