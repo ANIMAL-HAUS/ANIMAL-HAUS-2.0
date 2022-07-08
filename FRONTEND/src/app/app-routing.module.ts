@@ -5,7 +5,7 @@ import { ContractorProfileComponent } from './component/contractor-profile/contr
 
 import { DashboardComponent } from './component/dashboard/dashboard.component';
 import { GroomingComponent } from './component/grooming/grooming.component';
-import { RegisterCustomerComponent } from './component/register-customer/register-customer.component';
+
 import { RegisterComponent } from './component/register/register.component';
 
 
@@ -14,7 +14,7 @@ const routes: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
   { path: 'component/dashboard', component: DashboardComponent },
   {path: 'component/register', component:RegisterComponent},
-  {path: 'component/register-customer', component:RegisterCustomerComponent},
+  
   {path: 'component/contractor-profile', component: ContractorProfileComponent},
   // {path: 'grooming', component: GroomingComponent},
   

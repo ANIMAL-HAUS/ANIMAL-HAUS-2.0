@@ -1,12 +1,30 @@
-<div class="container">
+<div class="container-fluid">
+    <div class="row justify-content-start">
+        <ng-container *ngFor="let user of users">
+            <div class="card col-md-12">
+                <div class="profile">
+                    <img src="/assets/icons/person.png" alt="profileholder" style="height: 200px; width: 200px;">
+                </div>
+               <h4>Name: {{user.firstName}}</h4> 
+               <h4>Location: {{user.address}} </h4>
+               <h6>About Me: {{user.aboutMe}}</h6>
+            </div>
+        </ng-container>
+    </div>
+</div>
+
+
+
+
+<!-- <div class="container">
     <div class="row">
-        <!-- <ng-container *ngFor="let product of products"> -->
+        <ng-container *ngFor="let product of products"> 
             <div class="card col-md-4">
 
             </div>
-        <!-- </ng-container> -->
+        </ng-container> 
         <div class="card col-md-8">
             <h1></h1>
         </div>
     </div>
-</div>
+</div> -->

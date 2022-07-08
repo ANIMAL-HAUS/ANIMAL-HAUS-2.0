@@ -10,7 +10,7 @@ import { ContractorProfileComponent } from './component/contractor-profile/contr
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
-import { RegisterCustomerComponent } from './component/register-customer/register-customer.component';
+
 import { HttpClientModule } from '@angular/common/http';
 import { DashboardComponent } from './component/dashboard/dashboard.component';
 import { HeaderComponent } from './component/header/header.component';
@@ -24,13 +24,13 @@ import { AllLoginComponent } from './component/all-login/all-login.component';
     RegisterComponent,
     ContractorProfileComponent, 
     
-    RegisterCustomerComponent,
+    
     DashboardComponent,
     HeaderComponent,
     GroomingComponent,
 
     
-    RegisterCustomerComponent,
+  
     AllLoginComponent,
 
   ],
@@ -42,7 +42,7 @@ import { AllLoginComponent } from './component/all-login/all-login.component';
     ReactiveFormsModule,
     RouterModule.forRoot([
       {path: 'component/register', component:RegisterComponent},
-  {path: 'component/register-customer', component:RegisterCustomerComponent},
+  
   {path: 'component/contractor-profile', component: ContractorProfileComponent},
   
   {path: 'dashboard', component: DashboardComponent},

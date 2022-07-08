@@ -15,7 +15,7 @@ export class ServicesService {
   }
 
   addContractor(newUser: Users) {
-    return this.httpClient.post<Users>('http://localhost:5000/petgrooming/authcontroller/contractor', newUser);   
+    return this.httpClient.post<Users>('http://localhost:5000/petgrooming/authcontroller/contractoranytimeweekends', newUser);   
   }
 
   getCustomers()
