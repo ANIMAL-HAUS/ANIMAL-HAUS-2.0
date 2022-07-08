@@ -4,15 +4,15 @@ export class Users {
     lastName!: string;
     userName!: string;
     password!:string;
-    userRole!: Role;
+    role!: UserRole;
     email!: string;
     address!: string;
-    aboutme!: string;
+    aboutMe!: string;
     time!: TimeofDay;
     day!: Days;
 
 }
-export enum Role {
+export enum UserRole {
     Contractor,
     Customer
 }

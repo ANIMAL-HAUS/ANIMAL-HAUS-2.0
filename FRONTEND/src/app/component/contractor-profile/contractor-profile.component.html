@@ -27,6 +27,8 @@
           <th>email</th>
           <th>address</th>
           <th>About me</th>
+          <th>Day</th>
+          <th>Time</th>
           <th></th>
         </tr>
       </thead>
@@ -37,10 +39,12 @@
           <td>{{user.lastName}}</td>
           <td>{{user.userName}}</td>
           <td>{{user.password}}</td>
-          <td>{{user.userRole}}</td>
+          <td>{{user.role}}</td>
           <td>{{user.email}}</td>
           <td>{{user.address}}</td>
-          <td>{{user.aboutme}}</td>
+          <td>{{user.aboutMe}}</td>
+          <td>{{user.day}}</td>
+          <td>{{user.time}}</td>
 
           <td><button type="button" class="btn btn-primary" (click)="viewContractor(user.id)">Show Details</button></td>
         </tr>

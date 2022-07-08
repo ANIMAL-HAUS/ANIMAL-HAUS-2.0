@@ -2,7 +2,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import {Users } from '../../models/Users';
-import {Role } from '../../models/Users';
+import {UserRole } from '../../models/Users';
 
 import { ServicesService } from 'src/app/service/services.service';
 
@@ -17,25 +17,25 @@ export class RegisterComponent implements OnInit {
   lastName!: string;
   userName!: string;
   password!:string;
-  userRole!: Role;
+  role!: UserRole;
   email!: string;
   address!: string;
-  aboutme!: string;
+  aboutMe!: string;
 
-  users= {
-    firstName: String,
-  lastName: String,
-  userName: String,
-  password:String,
-  userRole: Role,
-  email: String,
-  address: String,
-  aboutme: String,
-  }
+  // users= {
+  //   firstName: String,
+  // lastName: String,
+  // userName: String,
+  // password:String,
+  // role: UserRole,
+  // email: String,
+  // address: String,
+  // aboutme: String,
+  // }
 
   @Input()
   user!: Users;
-  role!: Role;
+  userRole!: UserRole;
   
 
   @Output()
@@ -55,7 +55,7 @@ export class RegisterComponent implements OnInit {
     
     
 
-    console.log('role:', Role);
+    console.log('userRole:', UserRole);
   }
 
   addContractor() {
