@@ -1,3 +1,4 @@
+import { Users } from 'src/app/models/Users';
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
@@ -22,41 +23,38 @@ const httpOptions = {
   styleUrls: ['./all-login.component.css']
 })
 export class AllLoginComponent implements OnInit {
+  userName!:string;
+  password!:string;
+  result!:boolean;
+  User ={userName:String, password:String};
+  Credentials = {withCredentials:true};
+  response:any;
+  msgError="";
 
-  // user_id!: Number;
-  username!: string;
-  password!: String;
-  result!: boolean;
-  // user = {username : String, password:String};
-  Credentials = {withCredentials: true};
-  response : any;
-  msgError = "";
-  usrid : any;
-  user = {username : String, password: String};
   constructor(private _http : HttpClient, private router : Router) { }
 
   ngOnInit(): void {
+
   }
 
-  Loginuser()
-  {
-    let user = {
-                username : this.username,
-                password : this.password
+  onSubmit() {
+    let User ={userName:this.userName,
+                password:this.password,
+                
+
               };
     let Credentials = {withCredentials:true};
-    // console.log(this.user_id);
-    console.log(this.username);
-    console.log(this.password); 
-    console.log(this.user);
+    console.log(this.userName);
+    console.log(this.password);
+    console.log(User);
     console.log(Credentials);
 
-    let response = this._http.post<any>("http://localhost:5000/petgrooming/authcontroller/login",user,httpOptions).subscribe(
-      {
-        next : (v) =>  this.router.navigate([/**'/products??'*/]),
-        error : (e) => this.msgError = "Invalid Credentials, Please Enter a valid user name or password",
-        complete: () =>  window.localStorage.setItem("username",(this.username))
-      }
-      );
+    
+      let response = this._http.post<any>("http://localhost:5000/petgrooming/authcontroller/login",
+    Users, httpOptions).subscribe({
+      next:(_v:1) => this.router.navigate(['component/register']),
+      error:(_e:0) => console.error(this.msgError="Invalid Credentials, Please Enter a Valid User Name and/or Password"),
+      complete: () => window.localStorage.setItem("userName", this.userName)
+    });
   }
 }
