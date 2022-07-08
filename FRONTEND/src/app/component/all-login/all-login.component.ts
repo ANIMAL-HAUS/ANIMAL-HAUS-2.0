@@ -26,7 +26,7 @@ export class AllLoginComponent implements OnInit {
   userName!:string;
   password!:string;
   result!:boolean;
-  User ={userName:String, password:String};
+  user!: Users;
   Credentials = {withCredentials:true};
   response:any;
   msgError="";
@@ -38,21 +38,29 @@ export class AllLoginComponent implements OnInit {
   }
 
   onSubmit() {
-    let User ={userName:this.userName,
-                password:this.password,
-                
+    this.user ={id:0,
+      userName: this.userName,
+      password: this.password,
+      role: 0,
+      firstName: "no user",
+      lastName: "no user",
+      email: "no user",
+      address: "no address",
+      aboutMe: "none",
+      time: 0,
+      day: 0
+    };
 
-              };
     let Credentials = {withCredentials:true};
     console.log(this.userName);
     console.log(this.password);
-    console.log(User);
+    console.log(this.user);
     console.log(Credentials);
 
     
-      let response = this._http.post<any>("http://localhost:5000/petgrooming/authcontroller/login",
+    let response = this._http.post<any>("http://localhost:5000/petgrooming/authcontroller/login",
     Users, httpOptions).subscribe({
-      next:(_v:1) => this.router.navigate(['component/register']),
+      next:(_v:1) => this.router.navigate(['/component/register']),
       error:(_e:0) => console.error(this.msgError="Invalid Credentials, Please Enter a Valid User Name and/or Password"),
       complete: () => window.localStorage.setItem("userName", this.userName)
     });
