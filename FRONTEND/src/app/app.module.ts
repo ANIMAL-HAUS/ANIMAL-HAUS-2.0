@@ -15,7 +15,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { DashboardComponent } from './component/dashboard/dashboard.component';
 import { HeaderComponent } from './component/header/header.component';
 import { GroomingComponent } from './component/grooming/grooming.component';
-import { LoginComponent } from './component/login/login.component';
+
 import { AllLoginComponent } from './component/all-login/all-login.component';
 
 @NgModule({
@@ -28,7 +28,7 @@ import { AllLoginComponent } from './component/all-login/all-login.component';
     DashboardComponent,
     HeaderComponent,
     GroomingComponent,
-    LoginComponent,
+
     
     RegisterCustomerComponent,
     AllLoginComponent,

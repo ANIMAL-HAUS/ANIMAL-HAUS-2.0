@@ -8,11 +8,15 @@ export class Users {
     email!: string;
     address!: string;
     aboutme!: string;
+    time!: TimeofDay;
+    day!: Days;
 
 }
 export enum Role {
     Contractor,
-    Customer}
+    Customer
+}
+
 export enum Categories{
     Walking,
     Grooming,
