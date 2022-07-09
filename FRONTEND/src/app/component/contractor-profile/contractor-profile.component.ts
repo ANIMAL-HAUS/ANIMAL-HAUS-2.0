@@ -2,7 +2,16 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { UserRole, Users } from '../../models/Users';
 import { ServicesService } from 'src/app/service/services.service';
-
+import { HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
+const httpOptions = {
+  headers: new HttpHeaders({
+    'Content-Type' : 'application/json',
+    'Access-Control-Allow-Headers' : 'Content-type: application/json',
+    'Access-Control-Allow-Methods' : 'POST',
+    'Access-Control-Allow-Origin' : '*'
+  })
+};
 @Component({
   selector: 'app-contractor-profile',
   templateUrl: './contractor-profile.component.html',
@@ -13,16 +22,20 @@ export class ContractorProfileComponent implements OnInit {
   users!: Array<Users>;
   role!: Array<UserRole>;
   action!: string;
-
+  aboutMe!: any;
   selectedUser!: Users;
+  num: any;
+  Num!: number;
 
-
+  
   constructor(private ServicesService: ServicesService ,
     private router: Router,
-    private activatedRoute: ActivatedRoute) { }
+    private activatedRoute: ActivatedRoute,
+    private _http : HttpClient,) { }
 
   ngOnInit() {
     this.refreshData();
+    
   }
   refreshData() {
     this.ServicesService.getContractors().subscribe(
@@ -41,8 +54,11 @@ export class ContractorProfileComponent implements OnInit {
   
   viewContractor(id: number) {
     this.router.navigate(['component', 'contractor-profile'], {queryParams : {id, action: 'view'}});
+   
   }
-
+  randomContractor(){
+  alert(sessionStorage.getItem("aboutMe"));
+  }
   handleSuccessfulResponse(response: Users[]) {
     this.users = response;
     console.log(this.users);
