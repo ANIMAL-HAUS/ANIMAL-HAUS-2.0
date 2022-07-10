@@ -7,7 +7,6 @@ import { Users, UserRole } from 'src/app/models/Users';
   styleUrls: ['./grooming.component.css']
 })
 export class GroomingComponent implements OnInit {
-
   users!: Array<Users>;
   role!: Array<UserRole>;
   action!: string;
