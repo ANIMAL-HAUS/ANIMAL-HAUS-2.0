@@ -1,62 +1,38 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-
-  
-</head>
 <body>
-
-
-<h1>CONTRACTOR PROFILE</h1>
-<!--<a class="btn btn-primary mb-3" (click)="addContractor()">View Contractors</a>-->
-<div class="container row">
-  <div class="col-md-6">
-    <table class="table">
-      <thead>
-        <tr>
-          <th>id</th>
-          <th>firstname</th>
-          <th>lastname</th>
-          <th>username</th>
-          <th>password</th>
-          <th>Role</th>
-          <th>email</th>
-          <th>address</th>
-          <th>About me</th>
-          <th>Day</th>
-          <th>Time</th>
-          <th></th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let user of users">
-          <td>{{user.id}}</td>
-          <td>{{user.firstName}}</td>
-          <td>{{user.lastName}}</td>
-          <td>{{user.userName}}</td>
-          <td>{{user.password}}</td>
-          <td>{{user.role}}</td>
-          <td>{{user.email}}</td>
-          <td>{{user.address}}</td>
-          <td>{{user.aboutMe}}</td>
-          <td>{{user.day}}</td>
-          <td>{{user.time}}</td>
-
-          <td><button type="button" class="btn btn-primary" (click)="viewContractor(user.id)">Show Details</button></td>
-        </tr>
-      </tbody>
-    </table>
+  <div class="container-fluid">
+      <div class="row justify-content-center">
+          <div class="col-md-3" style="background-color:#652CB3; height: auto; color: white;">
+                  <br>
+                  <ul>
+                      <li><h3>Account Details</h3></li>
+                      <li><h3>Logout</h3></li>  <!--add button to acutally log out here-->
+                      <li><h3>Delete Account</h3></li> <!--add button to delete account??-->
+                  </ul>
+          </div>
+          <div class="col-md-9 mt-3">
+              <div class="card" style="border-style: none;">
+                  <img src="/assets/images/dog-hug.jpg" alt="dog-hug" style="width: 35%;">
+                  <!-- call to about me section from users table-->
+                  <!-- <h6>{{users.aboutMe}}</h6> -->
+                  <br>
+                  <br>
+                  <div class="row justify-content-around">
+                      <br>
+                      <br>
+                      <h3 style="text-align:center;">Your Services</h3>
+                      <br>
+                      <br>
+                      <div class="col-md-4 mt-2">
+                          <img src="/assets/images/brushing-dog.jpg" alt="brush-dog" style="width: 18em;">
+                          <!--services pull will go here-->
+                      </div>
+                      <div class="col-md-4 mt-2">
+                          <img src="/assets/images/dog-wash.jpg" alt="dog-wash" style="width: 18em;">
+                          <!--services pull will go here-->
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
   </div>
-  <div class="col-md-6">
-    <!--<app-register *ngIf="action === 'add'" [user]="selectedUser" (userAddedEvent)="refreshData()"></app-register>-->
-    
-    <!--<app-contractor-profile *ngIf="action === 'view'" [user]="selectedUser" (userDeletedEvent)="refreshData()"></app-contractor-profile>-->
-  </div>
-</div>
-<button type="button" class="btn btn-primary" (click)="randomContractor()">no Details</button>
-</body>
-</html>
+  </body>

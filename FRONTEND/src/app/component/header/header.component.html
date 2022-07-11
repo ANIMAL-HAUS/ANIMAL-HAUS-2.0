@@ -1,38 +1,55 @@
 <nav>
-  <div class="navbar navbar-expand-sm bg-warning shadow-sm">
+  <div class="navbar navbar-light bg-warning shadow-sm">
     <div class="navbar-brand align-item-center d-flex">
       <a routerLink="/dashboard">
         <strong class="logo" style="font-size: 30px;">ANIMAL HAUS</strong>
       </a>
     </div>
-      <ul class="navbar-nav mx-auto">
-        <li class="nav-item ml-5 mr-5">
-          <a class="nav-link" style="color: black;" routerLink="/grooming">
-            <img alt="groom" src="/assets/images/groom.jpg">
-            <h4 style="font-size: 2vw;">Grooming</h4>
-          </a>
-        </li>
-        <li class="nav-item ml-5 mr-5">
-          <a class="nav-link" style="color: black;" routerLink="/grooming">
-            <img alt="sit" src="/assets/images/sit.jpg">
-            <h4 style="font-size: 2vw;">Daycare</h4>
-          </a>
-        </li>
-        <li class="nav-item ml-5 mr-5">
-          <a class="nav-link" style="color: black;" routerLink="/grooming">
-            <img alt= "walk" src="/assets/images/walk.jpg">
-            <h4 style="font-size: 2vw;">Walking</h4>
-          </a>
-        </li>
-      </ul>
-
-      <ul class="navbar nav">
-        <li class="nav-item mr-3" style="background-color: white; border: 1px solid; border-color: blue;">
-          <a class="nav-link" routerLink="/login">LOGIN</a>
-        </li> 
-        <li class="nav-item" style="background-color: white; border: 1px solid; border-color: blue;">
-          <a class="nav-link" routerLink="/register">SIGN UP</a>
-        </li>
-      </ul>
+    
+    <div>
+      <button type="button" class ="profile" data-bs-toggle="modal" data-bs-target="#myModal">
+        <a routerLink="/component/contractor-profile">Profile</a>
+      </button>
+    
+      <button type="button" class ="login" data-bs-toggle="modal" data-bs-target="#myModal">
+        <a routerLink="/component/all-login">LOGIN</a>
+      </button>
+      
+      <button type="button" class ="register" data-bs-toggle="modal" data-bs-target="#myModal2">
+        <a routerLink="/component/register"> SIGN UP</a>
+      </button>
+      
     </div>
+    </div>
+  
+  <div class="navbar navbar-light bg-warning shadow-sm justify-content-center">
+    <div class="container d-flex justify-content-around">
+    <div class="row">
+      <div class="col-md-4">
+    <button type="button" class="groom">  
+      <a routerLink="/grooming">
+        <img alt="" src="assets/images/groom.jpg">
+        <h3 style="font-size: 2vw;">GROOMING</h3>
+        </a>
+    </button>  
+  </div>
+  <div class="col-md-4">
+    <button type="button" class="sit">
+      <a routerLink="/">
+        <img alt="" src="assets/images/sit.jpg">
+        <h3 style="font-size: 2vw;">PET DAYCARE</h3>
+      </a>
+    </button>
+  </div>
+  <div class="col-md-4">
+    <button type="button" class="walk">
+      <a routerLink="/">
+        <img alt="" src="assets/images/walk.jpg">
+        <h3 style="font-size: 2vw;">PET WALKING</h3>
+      </a>
+    </button>
+  </div>
+</div>
+  </div>
+</div>
 </nav>
