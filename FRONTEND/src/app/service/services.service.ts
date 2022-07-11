@@ -1,3 +1,4 @@
+import { Days, TimeofDay } from './../models/Users';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import{Users} from '../models/Users';
@@ -8,6 +9,7 @@ import{Users} from '../models/Users';
 export class ServicesService {
   deleteUser: any;
 
+
   constructor(private httpClient:HttpClient) { }
   getContractors()
   {
@@ -15,9 +17,14 @@ export class ServicesService {
   }
 
   addContractor(newUser: Users) {
-    return this.httpClient.post<Users>('http://localhost:5000/petgrooming/authcontroller/contractoranytimeweekends', newUser);   
+    
+    return this.httpClient.post<Users>('http://localhost:5000/petgrooming/authcontroller/contractoranytimeweekends'
+    , newUser);   
   }
+  getById(){
+    return this.httpClient.get<Users>("http://localhost:5000/petgrooming/usercontroller/getuserbyid");
 
+  }
   getCustomers()
   {
     return this.httpClient.get<Users[]>('http://localhost:5000/petgrooming/usercontroller/getallcustomers');

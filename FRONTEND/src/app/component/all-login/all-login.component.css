@@ -1,4 +1,4 @@
-button {
+.btn {
     border: none;
     background-color: transparent;
    }
@@ -8,6 +8,6 @@ button {
     text-align: center;
     border-color: black;
     left: 43.75em;
-    border-radius: 50px;
-    border-width: 5px;
+    border-radius: 0px;
+    border-width: 0px;
 }

@@ -8,11 +8,51 @@
 
   
 </head>
+
 <body>
+  <div class="container-fluid">
+      <div class="row justify-content-center">
+          <div class="col-md-3" style="background-color:#652CB3; height: auto; color: white;">
+                  <br>
+                  <ul>
+                      <li><h3>Account Details</h3></li>
+                      <li><h3>Logout</h3></li>  <!--add button to acutally log out here-->
+                      <li><h3>Delete Account</h3></li> <!--add button to delete account??-->
+                  </ul>
+          </div>
+          <div class="col-md-9 mt-3">
+              <div class="card" style="border-style: none;">
+                  <img src="/assets/images/dog-hug.jpg" alt="dog-hug" style="width: 35%;">
+                  <!-- call to about me section from users table-->
+                  <tr *ngFor="let user of users"></tr>
+                  <!-- <h6>{{users.aboutMe}}</h6>-->
+                  <br>
+                  <br>
+                  <div class="row justify-content-around">
+                      <br>
+                      <br>
+                      <h3 style="text-align:center;">Your Services</h3>
+                      <br>
+                      <br>
+                      <div class="col-md-4 mt-2">
+                          <img src="/assets/images/brushing-dog.jpg" alt="brush-dog" style="width: 18em;">
+                          <!--services pull will go here-->
+                      </div>
+                      <div class="col-md-4 mt-2">
+                          <img src="/assets/images/dog-wash.jpg" alt="dog-wash" style="width: 18em;">
+                          <!--services pull will go here-->
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+  </body>
+<!--<body>
 
 
 <h1>CONTRACTOR PROFILE</h1>
-<!--<a class="btn btn-primary mb-3" (click)="addContractor()">View Contractors</a>-->
+<a class="btn btn-primary mb-3" (click)="addContractor()">View Contractors</a>
 <div class="container row">
   <div class="col-md-6">
     <table class="table">
@@ -51,12 +91,12 @@
       </tbody>
     </table>
   </div>
-  <div class="col-md-6">
+  <div class="col-md-6">-->
     <!--<app-register *ngIf="action === 'add'" [user]="selectedUser" (userAddedEvent)="refreshData()"></app-register>-->
     
-    <!--<app-contractor-profile *ngIf="action === 'view'" [user]="selectedUser" (userDeletedEvent)="refreshData()"></app-contractor-profile>-->
+    <!--<app-contractor-profile *ngIf="action === 'view'" [user]="selectedUser" (userDeletedEvent)="refreshData()"></app-contractor-profile>
   </div>
 </div>
 
-</body>
+</body>-->
 </html>

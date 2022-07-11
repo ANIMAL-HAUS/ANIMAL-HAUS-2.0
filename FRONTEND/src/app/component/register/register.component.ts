@@ -1,3 +1,4 @@
+import { TimeofDay, Days } from './../../models/Users';
 
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
@@ -21,6 +22,9 @@ export class RegisterComponent implements OnInit {
   email!: string;
   address!: string;
   aboutMe!: string;
+  day!: Days;
+  time!: TimeofDay;
+
 
   // users= {
   //   firstName: String,
@@ -36,6 +40,8 @@ export class RegisterComponent implements OnInit {
   @Input()
   user!: Users;
   userRole!: UserRole;
+  // time!: TimeofDay;
+  // day!:Days
   
 
   @Output()
@@ -59,12 +65,17 @@ export class RegisterComponent implements OnInit {
   }
 
   addContractor() {
+
+    
+
+    
     this.ServicesService.addContractor(this.user).subscribe(
       (user) => {
         this.userAddedEvent.emit();
         this.router.navigate(['component', 'contractor-profile']);
       }
     );
+    }
   }
  
-}
+

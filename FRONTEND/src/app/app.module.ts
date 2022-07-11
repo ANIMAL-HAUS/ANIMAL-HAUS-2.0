@@ -42,10 +42,12 @@ import { AllLoginComponent } from './component/all-login/all-login.component';
     ReactiveFormsModule,
     RouterModule.forRoot([
       {path: 'component/register', component:RegisterComponent},
-  
+ 
   {path: 'component/contractor-profile', component: ContractorProfileComponent},
   
   {path: 'dashboard', component: DashboardComponent},
+  {path: 'grooming', component: GroomingComponent},
+  {path: 'component/all-login', component: AllLoginComponent},
 
     ]),
 ],
