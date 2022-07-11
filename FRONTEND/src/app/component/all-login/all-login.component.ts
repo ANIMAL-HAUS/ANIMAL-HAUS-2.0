@@ -66,7 +66,7 @@ export class AllLoginComponent implements OnInit {
     //   complete: () => window.localStorage.setItem("userName", this.userName)
     // });
     let response = this._http.post("http://localhost:5000/petgrooming/authcontroller/login",
-    this.user).toPromise().then( ( data:any) =>{//console.log(data);
+    this.user).toPromise().then((data:any) =>{//console.log(data);
       this.user = data;
      // console.log(this.users.id);
       if (this.user.id ==0){

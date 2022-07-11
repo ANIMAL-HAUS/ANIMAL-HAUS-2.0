@@ -40,6 +40,21 @@ public class Users {
 	
 	
 	
+	public Users(int id, String firstName, String lastName, String userName, String password, String email, String city,
+			UserRole role, String aboutMe, TimeofDay time, Days day) {
+		super();
+		this.id = id;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.userName = userName;
+		this.password = password;
+		this.email = email;
+		this.city = city;
+		this.role = role;
+		this.aboutMe = aboutMe;
+		this.time = time;
+		this.day = day;
+	}
 	public String getCity() {
 		return city;
 	}
