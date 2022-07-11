@@ -1,13 +1,24 @@
-button {
+.btn {
     border: none;
-    background-color: transparent;
+    background: #652cb3;
+    border-color: white;
+    border-style: solid;
+    margin-right: 20px;
+    color: white
    }
    .card {
     padding: 3.125em;
     margin: 2.8125em;
     text-align: center;
-    border-color: black;
+    border-color: white;
     left: 43.75em;
-    border-radius: 50px;
-    border-width: 5px;
+    border-radius: 0px;
+    border-width: 0px;
 }
+
+
+input {
+    height: 20px;
+    flex: 0 0 200px;
+    margin-left: 10px;
+  }

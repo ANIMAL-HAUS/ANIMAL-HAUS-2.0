@@ -14,18 +14,36 @@ export class GroomingComponent implements OnInit {
   action!: string;
 
   selectedUser!: Users;
-
+  
 
   constructor(private ServicesService: ServicesService, 
     private router: Router,
     private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
-   this.ServicesService.getContractors()
+    //this.refreshData();
+   this.ServicesService.getContractor()
    .subscribe(res=>{
      this.users = res;
    })
    console.log(this.users);
   }
-  
-}
+  // refreshData() {
+  //   this.ServicesService.getContractors().subscribe(
+  //     response => this.handleSuccessfulResponse(response),
+  //   );
+
+    // this.activatedRoute.queryParams.subscribe(
+    //   (params) => {
+    //     this.action = params['action'];
+    //     const selectedUserId = params['id'];
+    //     if (selectedUserId) {
+    //     }
+    //   }
+    // );
+  }
+  // handleSuccessfulResponse(response: Users[]) {
+  //   // this.users = response;
+  //    console.log(this.users);
+  //  }
+

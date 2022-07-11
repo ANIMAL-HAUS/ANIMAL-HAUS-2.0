@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { map } from 'rxjs';
 import{Users} from '../models/Users';
 
 @Injectable({
@@ -7,7 +8,7 @@ import{Users} from '../models/Users';
 })
 export class ServicesService {
   deleteUser: any;
-
+  
   constructor(private httpClient:HttpClient) { }
   getContractors()
   {
@@ -25,6 +26,12 @@ export class ServicesService {
 
   addCustomer(newUser: Users) {
     return this.httpClient.post<Users>('http://localhost:5000/petgrooming/authcontroller', newUser);   
+  }
+  getContractor(){
+    return this.httpClient.get<any>('http://localhost:5000/petgrooming/usercontroller/getallcontractors')
+    .pipe(map((res:any)=>{
+      return res;
+    }))
   }
 
   
