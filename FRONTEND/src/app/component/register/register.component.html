@@ -19,7 +19,13 @@
   <div class="row  justify-content-center">
       <div class="col-6">
     <label for="password">Password</label>
-    <input type="text" class="form-control" id="password" placeholder="********" [(ngModel)]="user.password" name="password">
+    <input type="password" class="form-control" id="password" placeholder="********"  name="password">
+      </div>
+      <div class="row  justify-content-center">
+      <div class="col-6">
+    <label for="password">Reenter Password</label>
+    <input type="password" class="form-control" id="password1" placeholder="********" [(ngModel)]="user.password" name="password1">
+      </div>
       </div>
   </div>
   <!-- <div class="row  justify-content-center">
@@ -88,11 +94,12 @@
         <div class="p-2">
           <h3>What services do you offer?</h3>
         <select title="select"
-        name="Pet Services">
+        name="Pet Services" id = "serves">
           <option value="select">Select Service</option>
-          <option value="grooming">Pet Grooming</option>
-          <option value="walking">Dog Walking</option>
-          <option value="sit">Pet Sitting</option>
+          <option value="Petgrooming">Pet Grooming</option>
+          <option value="Dogwalking">Dog Walking</option>
+          <option value="Petsitting">Pet Sitting</option>
+          <option value="All">All</option>
         </select>
         <!-- <label for="text">Service Description</label> -->
         <!-- <input type="checkbox" id="groom" name="groom" value="groom">

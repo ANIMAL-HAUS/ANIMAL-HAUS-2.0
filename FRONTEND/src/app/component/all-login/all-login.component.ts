@@ -30,7 +30,7 @@ export class AllLoginComponent implements OnInit {
  user!: Users;
   Credentials = {withCredentials:true};
   response:any;
-  msgError="";
+  msgError!: any;
   
   
   constructor(private _http : HttpClient, private router : Router) { }
@@ -50,7 +50,9 @@ export class AllLoginComponent implements OnInit {
                 address: "no address",
                 aboutMe: "none",
                 time: 0,
-                day: 0
+                day: 0,
+                service: 0,
+                price: 0
               };
     let Credentials = {withCredentials:true};
     console.log(this.userName);
@@ -70,7 +72,7 @@ export class AllLoginComponent implements OnInit {
       this.user = data;
      // console.log(this.users.id);
       if (this.user.id ==0){
-        alert("wrong username or password.");
+        document.getElementById("wrong").innerHTML = "wrong username or password";
       }
       else{
         this.router.navigate(['component/contractor-profile']);
