@@ -3,6 +3,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { UserRole, Users } from '../../models/Users';
 import { ServicesService } from 'src/app/service/services.service';
 
+
 @Component({
   selector: 'app-contractor-profile',
   templateUrl: './contractor-profile.component.html',
@@ -13,6 +14,7 @@ export class ContractorProfileComponent implements OnInit {
   users!: Array<Users>;
   role!: Array<UserRole>;
   action!: string;
+ 
 
   selectedUser!: Users;
 
@@ -52,5 +54,6 @@ export class ContractorProfileComponent implements OnInit {
     this.selectedUser = new Users();
     this.router.navigate(['component', 'contractor-profile'], { queryParams: { action: 'add' } });
   }
+  
 
 }
