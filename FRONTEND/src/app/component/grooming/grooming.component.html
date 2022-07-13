@@ -37,11 +37,12 @@
 </div> -->
 <div class="container-fluid">
     <div class="row justify-content-start">
-        <ng-container *ngFor="let user of users">
+        <ng-container *ngFor="let user of users" >
             <div class="card col-sm-4 ml-4 mt-5">
                 <div class="profile">
                     <img src="/assets/images/person.png" alt="profileholder" style="height: 10em; width: 10em;">
                 </div>
+                
                <h4>Name: {{user.firstName}} {{user.lastName}}</h4> 
                <h4>Location: {{user.address}} </h4>
                <h6>About Me: {{user.aboutMe}}</h6>
@@ -52,9 +53,9 @@
                 </div>
             </div>
             <div class="card col-sm-1 mt-5 mr-5">
-               <h6>Service: <!--name of service--></h6> 
-               <h6>Service Description: <!--service description--> </h6>
-               <h6>Price: </h6>
+               <h6>Service: {{user.service}}</h6> 
+               <h6>Service Description: {{user.description}}</h6>
+               <h6>Price: {{user.price}} </h6>
             </div>
             <div class="card col-sm-2"></div>
             <div class="card col-sm-2 mt-5 p-5 ml-5 text-right">
@@ -120,7 +121,7 @@
                             </div>
                     </div>
                     <div class="modal-footer text-center"  style="border-style:none;">
-                      <button type="button" class="btn btn-warning"><strong>Book Now</strong></button>
+                      <button type="button" class="btn btn-warning" id = "booknow" (click)="bookNow(user)"><strong>Book Now</strong></button>
                     </div>
                   </div>
                 </div>

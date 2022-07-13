@@ -72,16 +72,16 @@
   <br>
   <br>
   <div class="d-flex flex-column justify-content-center">
-    <div class="p-2"> 
+    <div class="p-2"  [(ngModel)]="user.day"> 
       <h3>Availability</h3>
-        <select title="select" name="timeofweek">
+        <select title="select" name="timeofweek" >
           <option value="selectweek">Select Time of Week</option>
           <option value="weekday">Monday-Friday</option><br>
           <option value="weekends">Weekends</option><br>
           <option value="anytime">Anytime</option><br>
         </select>
       </div>
-      <div class="p-2">
+      <div class="p-2" [(ngModel)]="user.time">
         <select title="select" name="timeofday">
         <option value="selectday">Select Time of Day</option>
         <option value="morning">Morning</option><br>
@@ -94,7 +94,7 @@
         <div class="p-2">
           <h3>What services do you offer?</h3>
         <select title="select"
-        name="Pet Services" id = "serves">
+        name="Pet Services" id = "serves" >
           <option value="select">Select Service</option>
           <option value="Petgrooming">Pet Grooming</option>
           <option value="Dogwalking">Dog Walking</option>
@@ -144,7 +144,6 @@
 
 
 <!--<form #recievedUser="ngForm">
-
   <label for="name">firstName</label>
   <input type="text" class="form-control" id="fName" 
   placeholder="user fname" [(ngModel)]="user.firstName" name="firstName">
@@ -153,38 +152,28 @@
   <input type="text" class="form-control" id="lNname"
    placeholder="user lname" [(ngModel)]="user.lastName" name="lastName">
   
-
   <label for="type">username</label>
   <input type="text" class="form-control" id="type" 
   placeholder="type name" [(ngModel)]="user.userName" name="name">
-
   <label for="password">Password</label>
   <input type="password" class="form-control" id="password" 
   placeholder="password" [(ngModel)]="user.password" name="password">
-
   <label for="role">Role</label>
   <input type="role" class="form-control" id="role" 
   placeholder="role" [(ngModel)]="user.userRole" name="role">
-
   <label for="email">Email</label>
   <input type="email" class="form-control" id="email"
    placeholder="email" [(ngModel)]="user.email" name="email">
-
   <label for="address">Address</label>
   <input type="address" class="form-control" id="address"
    placeholder="address" [(ngModel)]="user.address" name="address">
-
   <label for="text">About Me</label>
   <input type="text" class="form-control" id="aboutme"
    placeholder="address" [(ngModel)]="user.aboutme" name="aboutMe">
-
   <input type="checkbox" id="terms" name="terms" value="mainTerm">
   <label for="terms"> I agree to the <a href="">term and condition</a></label>
-
-
    <br>
   <button type="button" class="btn btn-success" (click)="addContractor()">Create Account</button>
 </form>
   <button type="button" class="btn btn-success" (click)="addContractor()">Save</button>
 </form>-->
-

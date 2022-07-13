@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.revature.models.Cart;
 import com.revature.models.OrderHistory;
 import com.revature.models.Product;
 import com.revature.models.Users;
@@ -21,34 +22,31 @@ import com.revature.repository.CartDAO;
 import com.revature.repository.UserDAO;
 import com.revature.services.CartServices;
 import com.revature.services.ProductServices;
+import com.revature.services.UserServices;
 @Controller
 @RequestMapping(value="/cartcontroller")
 @CrossOrigin
 public class CartController {
-	static ProductServices ps = new ProductServices();
+	
 	static CartServices cs = new CartServices();
-	static ArrayList<Product> p = new ArrayList<Product>();
+	static ArrayList<Cart> p = new ArrayList<Cart>();
 	@GetMapping("/getallcartitems")
-	public ResponseEntity<List<Product>> getAllCartItems(){
+	public ResponseEntity<List<Cart>> getAllCartItems(){
 	//	List<Product> products = cs.getAllUserProducts();
 		 ResponseEntity.status(HttpStatus.CREATED).body(p);
 		 return ResponseEntity.status(200).body(p);
 }
 	@PostMapping("/insertproducttocart")
-	public static ResponseEntity<Product> insertProduct(@RequestBody int id){
+	public static ResponseEntity<Cart> insertProduct(@RequestBody Cart cart){
 		//System.out.println(product.getId());
 	
-		if(id == 0) {
-			System.out.println("--------------------------------");
-			return ResponseEntity.status(HttpStatus.NO_CONTENT).body(null);
+		
+		
+		System.out.print(cart);
+			cs.insertProduct(cart);
 			
-		}else {	
-		Product product =	ps.getProductById(id);
-		System.out.print(product);
-			p.add(product);
-			p = cs.addingToCart(product,p);
-			return ResponseEntity.status(HttpStatus.OK).body(product);
-		}
+			return ResponseEntity.status(HttpStatus.OK).body(cart);
+		
 	}
 		@PostMapping("/removeproducttocart")
 		public static ResponseEntity<List<Product>> removeProduct(@RequestBody int id){
@@ -91,5 +89,13 @@ public class CartController {
 			List<OrderHistory> oh = cs.getOrderHistory(userid);
 			return ResponseEntity.status(HttpStatus.OK).body(oh);
 		}
-	}}
+	}
+	@PostMapping("/getCartbyUsername")
+	public static ResponseEntity<List<Cart>> getCartByUsername(@RequestBody Cart user){
+		
+		List<Cart> cart = cs.getOrderByUsername(user.getUsername());
+		ResponseEntity.status(HttpStatus.CREATED).body(cart);
+		 return ResponseEntity.status(201).body(cart);
+	}
+}
 	

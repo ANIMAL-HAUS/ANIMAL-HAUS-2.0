@@ -43,7 +43,9 @@ export class RegisterComponent implements OnInit {
 
   // message!: string;
   // password!: string;
-
+  days = ['Weekdays', 'Weekends', 'Anyday']
+  times = ['Morning', 'Afternoon', 'Night', 'Anytime']
+  services = ['Walking', 'Grooming', 'Daycare']
   constructor(private ServicesService: ServicesService,
     private router: Router) { }
 

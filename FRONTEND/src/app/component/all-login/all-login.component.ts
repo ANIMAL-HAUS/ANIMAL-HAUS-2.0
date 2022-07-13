@@ -51,8 +51,9 @@ export class AllLoginComponent implements OnInit {
                 aboutMe: "none",
                 time: 0,
                 day: 0,
-                service: 0,
-                price: 0
+               service: 0,
+                price: 0,
+                description: ""
               };
     let Credentials = {withCredentials:true};
     console.log(this.userName);
@@ -77,6 +78,7 @@ export class AllLoginComponent implements OnInit {
       else{
         this.router.navigate(['component/contractor-profile']);
         sessionStorage.setItem("aboutMe",this.user.aboutMe);
+        sessionStorage.setItem("username", this.user.userName);
       }
     })
   }

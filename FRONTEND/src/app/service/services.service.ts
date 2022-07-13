@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { map } from 'rxjs';
 import{Users} from '../models/Users';
-
+import{Cart} from '../models/Cart';
 @Injectable({
   providedIn: 'root'
 })
@@ -32,6 +32,13 @@ export class ServicesService {
     .pipe(map((res:any)=>{
       return res;
     }))
+  }
+  getCart(cart: Cart){
+    return this.httpClient.post<any>('http://localhost:5000/petgrooming/cartcontroller/getCartbyUsername',cart)
+    .pipe(map((res:any)=>{
+      return res;
+    }))
+
   }
 
   

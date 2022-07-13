@@ -11,7 +11,8 @@ export class Users {
     time!: TimeofDay;
     day!: Days;
     service!: ServiceOffered;
-    price!: number;
+   price!: number;
+   description!: string;
 
 }
 export enum ServiceOffered{

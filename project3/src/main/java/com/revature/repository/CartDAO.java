@@ -3,11 +3,16 @@ package com.revature.repository;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.hibernate.cfg.Configuration;
 
+import com.revature.models.Cart;
 import com.revature.models.OrderHistory;
 import com.revature.models.Product;
 import com.revature.models.Users;
@@ -15,14 +20,36 @@ import com.revature.services.CartServices;
 import com.revature.utilities.HibernateUtil;
 
 public class CartDAO {
-	private static ArrayList<Product> products = new ArrayList<Product>();
+	private static ArrayList<Cart> products = new ArrayList<Cart>();
+	@PersistenceContext
+	public static void insertProduct(Cart product) {
+		try (Session ses = HibernateUtil.getSession()){
+			ses.save(product);
+			HibernateUtil.closeSession(); //This closes the session which will help prevent a memory leak issue
+			
+			}catch(HibernateException e) {
+				System.out.println(e);
+				e.printStackTrace();
+				
+			}	
+//		Configuration cfg  = new Configuration();
+//		cfg.configure();
+//		cfg.addAnnotatedClass(Cart.class);
+//		SessionFactory sf = cfg.buildSessionFactory();
+//		Session session  = sf.openSession();
+//		Transaction tx = session.beginTransaction();
+//		session.save(product);
+//		tx.commit();
+//		session.close();
+//		return 0;
+			}
 	
 	
-	public ArrayList<Product> insertUserItem(Product product) {
+	public ArrayList<Cart> insertUserItem(Cart product) {
 		products.add(product);
 		return products;
 	}
-	public static ArrayList<Product> getAllUserProducts(){ 
+	public static ArrayList<Cart> getAllUserProducts(){ 
 		return products; 
 	}
 	public CartDAO() {
@@ -30,7 +57,7 @@ public class CartDAO {
 		// TODO Auto-generated constructor stub
 	}
 	
-	public ArrayList<Product>   removeUserItems( int index){
+	public ArrayList<Cart>   removeUserItems( int index){
 			products.remove(index);
 			return products;
 			
@@ -38,11 +65,11 @@ public class CartDAO {
 	public static void clearAllItems( ) {
 		products.clear();
 	}
-public static double checkout(int userId, List<Product> p2) {
+public static double checkout(int userId, List<Cart> p2) {
 		double amount = 0;
 		double tax = .08;
 		try (Session ses = HibernateUtil.getSession()){
-			for (Product p : p2) {
+			for (Cart p : p2) {
 				double temp =  (p.getPrice() * tax);
 				amount += temp;
 				
@@ -56,19 +83,22 @@ public static double checkout(int userId, List<Product> p2) {
 			}
 		return 0;
 	}
-public static List<OrderHistory> getOrderbyUserID(int userId) {
+public static List<Cart> getOrderbyUsername(String username) {
 	Session ses = HibernateUtil.getSession(); //This opens the session
-
-	Query q = ses.createQuery("FROM OrderHistory WHERE userid = ?1");
-	q.setParameter(1,userId);
+	//Users user = ses.(Users.class, username);
+	Query q = ses.createQuery("FROM Cart WHERE username = ?1");
+	q.setParameter(1,username);
 	try {
-		List<OrderHistory> orderList = q.getResultList();
+		List<Cart> userList = q.getResultList();
 		HibernateUtil.closeSession();
-		//OrderHistory oh = orderList.get(0);
-		//System.out.println(" exist");
-		return orderList;
+		
+		System.out.println("user exist");
+		return userList;
 	} catch(Exception e) {
 		return null;
 	}
+	
+	
 }
+
 }

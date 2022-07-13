@@ -64,11 +64,11 @@ public class UserDAO {
 		//HibernateUtil.closeSession(); //closes the session
 		return user.getAboutMe(); //returns the user
 	}
-	public static Users getByUserName(String userName) {
+	public static Users getByUserName(String username) {
 		Session ses = HibernateUtil.getSession(); //This opens the session
-	
-		Query q = ses.createQuery("FROM Users WHERE userName = ?1");
-		q.setParameter(1,userName);
+		//Users user = ses.(Users.class, username);
+		Query q = ses.createQuery("FROM Users WHERE username = ?1");
+		q.setParameter(1,username);
 		try {
 			List<Users> userList = q.getResultList();
 			HibernateUtil.closeSession();
@@ -80,11 +80,11 @@ public class UserDAO {
 		}
 		
 		
-	
+	} 
 		
 	}
 	
 
 
 
-}
+

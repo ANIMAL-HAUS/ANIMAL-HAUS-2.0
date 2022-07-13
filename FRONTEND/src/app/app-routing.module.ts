@@ -7,17 +7,17 @@ import { DashboardComponent } from './component/dashboard/dashboard.component';
 import { GroomingComponent } from './component/grooming/grooming.component';
 
 import { RegisterComponent } from './component/register/register.component';
-
-
+import {CheckoutComponent} from './component/checkout/checkout.component'
+import {CheckoutsComponentsComponent} from './checkouts-components/checkouts-components.component'
 
 const routes: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
   { path: 'component/dashboard', component: DashboardComponent },
   {path: 'component/register', component:RegisterComponent},
-  
+  {path: 'component/checkout', component:CheckoutComponent},
   {path: 'component/contractor-profile', component: ContractorProfileComponent},
    {path: 'component/grooming', component: GroomingComponent},
-  
+  {path: 'checkouts', component: CheckoutsComponentsComponent},
   {path: 'component/all-login', component: AllLoginComponent},
 
   
