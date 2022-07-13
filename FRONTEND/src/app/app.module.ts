@@ -17,6 +17,7 @@ import { HeaderComponent } from './component/header/header.component';
 import { GroomingComponent } from './component/grooming/grooming.component';
 
 import { AllLoginComponent } from './component/all-login/all-login.component';
+import { CheckoutsComponentsComponent } from './checkouts-components/checkouts-components.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { AllLoginComponent } from './component/all-login/all-login.component';
     
   
     AllLoginComponent,
+                CheckoutsComponentsComponent
 
   ],
   imports: [
@@ -40,6 +42,7 @@ import { AllLoginComponent } from './component/all-login/all-login.component';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
+    
     RouterModule.forRoot([
       {path: 'component/register', component:RegisterComponent},
   

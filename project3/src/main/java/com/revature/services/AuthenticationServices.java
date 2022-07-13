@@ -36,6 +36,7 @@ UserDAO userDAO = new UserDAO();
 		}
 		
 		// If the try-catch does not run, a null object is return and login is deemed unsuccessful
+		user.setId(0);
 		return user;
 		
 	}

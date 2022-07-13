@@ -25,7 +25,7 @@
         <!-- We will map our classes here -->
         <mapping class="com.revature.models.Users"/>
         <mapping class="com.revature.models.Product"/>
-        
+        <mapping class="com.revature.models.Cart"/>
         
 
      </session-factory>

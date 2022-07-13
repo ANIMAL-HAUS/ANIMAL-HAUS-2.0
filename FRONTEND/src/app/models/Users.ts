@@ -10,7 +10,16 @@ export class Users {
     aboutMe!: string;
     time!: TimeofDay;
     day!: Days;
+    service!: ServiceOffered;
+   price!: number;
+   description!: string;
 
+}
+export enum ServiceOffered{
+    Petgrooming,
+    Dogwalking,
+    Petsetting,
+    All
 }
 export enum UserRole {
     Contractor,

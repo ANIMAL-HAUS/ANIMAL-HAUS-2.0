@@ -53,7 +53,7 @@ public class UserController {
 		 ResponseEntity.status(HttpStatus.CREATED).body(u);
 		 return ResponseEntity.status(200).body(u);
 }
-	@GetMapping("/getuserbyusername")
+	@PostMapping("/getuserbyusername")
 	public ResponseEntity<Users> getUserByUsername(@RequestBody Users username){
 		Users u = new Users();
 		u = UserServices.getByUsersName(username.getUserName());

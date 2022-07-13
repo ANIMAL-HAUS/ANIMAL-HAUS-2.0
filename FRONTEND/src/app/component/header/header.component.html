@@ -1,10 +1,28 @@
 <nav>
-  <div class="navbar navbar-light bg-warning shadow-sm">
-    <div class="navbar-brand align-item-center d-flex">
-      <a routerLink="/dashboard">
-        <strong class="logo" style="font-size: 30px;">ANIMAL HAUS</strong>
-      </a>
-    </div>
+    <div class="navbar navbar-light bg-warning shadow-sm">
+      <div class="navbar-brand align-item-center d-flex">
+        <a routerLink="/dashboard">
+          <strong class="logo" style="font-size: 30px;">ANIMAL HAUS</strong>
+        </a>
+      </div>
+      
+      <div>
+        <button type="button" class ="profile" data-bs-toggle="modal" data-bs-target="#myModal">
+          <a routerLink="/component/contractor-profile">Profile</a>
+        </button>
+      
+        <button type="button" class ="login" data-bs-toggle="modal" data-bs-target="#myModal">
+          <a routerLink="/component/all-login">LOGIN</a>
+        </button>
+        
+        <button type="button" class ="register" data-bs-toggle="modal" data-bs-target="#myModal2">
+          <a routerLink="/component/register"> SIGN UP</a>
+        </button>
+        <button type="button" class ="grooming" data-bs-toggle="modal" data-bs-target="#myModal2">
+          <a routerLink="/component/grooming"> Grooming</a>
+        </button>
+      </div>
+      </div>
     
     <div>
       <button type="button" class ="profile" data-bs-toggle="modal" data-bs-target="#myModal">
@@ -22,7 +40,7 @@
         <a routerLink="/component/grooming"> Grooming</a>
       </button>
     </div>
-    </div>
+  
   
   <div class="navbar navbar-light bg-warning shadow-sm justify-content-center">
     <div class="container d-flex justify-content-around">

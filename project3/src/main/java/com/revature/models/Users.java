@@ -37,9 +37,123 @@ public class Users {
 	private String aboutMe;
 	private TimeofDay time;
 	private Days day;
+	private ServiceOffered service;
+	private double price;
+	private String description;
 	
-	
-	
+	public Users(String firstName, String lastName, String userName, String password, String email, String city,
+			String aboutMe, TimeofDay time, Days day, ServiceOffered service, double price, String description) {
+		super();
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.userName = userName;
+		this.password = password;
+		this.email = email;
+		this.city = city;
+		this.aboutMe = aboutMe;
+		this.time = time;
+		this.day = day;
+		this.service = service;
+		this.price = price;
+		this.description = description;
+	}
+	public Users(int id, String firstName, String lastName, String userName, String password, String email, String city,
+			UserRole role, String aboutMe, TimeofDay time, Days day, ServiceOffered service, double price,
+			String description) {
+		super();
+		this.id = id;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.userName = userName;
+		this.password = password;
+		this.email = email;
+		this.city = city;
+		this.role = role;
+		this.aboutMe = aboutMe;
+		this.time = time;
+		this.day = day;
+		this.service = service;
+		this.price = price;
+		this.description = description;
+	}
+	public double getPrice() {
+		return price;
+	}
+	public void setPrice(double price) {
+		this.price = price;
+	}
+	public String getDescription() {
+		return description;
+	}
+	public void setDescription(String description) {
+		this.description = description;
+	}
+	public Users(String firstName, String lastName, String userName, String password, String email, String city,
+			String aboutMe, TimeofDay time, Days day, ServiceOffered service) {
+		super();
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.userName = userName;
+		this.password = password;
+		this.email = email;
+		this.city = city;
+		this.aboutMe = aboutMe;
+		this.time = time;
+		this.day = day;
+		this.service = service;
+	}
+	public Users(String firstName, String lastName, String userName, String password, String email, String city,
+			UserRole role, String aboutMe, TimeofDay time, Days day, ServiceOffered service) {
+		super();
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.userName = userName;
+		this.password = password;
+		this.email = email;
+		this.city = city;
+		this.role = role;
+		this.aboutMe = aboutMe;
+		this.time = time;
+		this.day = day;
+		this.service = service;
+	}
+	public Users(int id, String firstName, String lastName, String userName, String password, String email, String city,
+			UserRole role, String aboutMe, TimeofDay time, Days day, ServiceOffered service) {
+		super();
+		this.id = id;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.userName = userName;
+		this.password = password;
+		this.email = email;
+		this.city = city;
+		this.role = role;
+		this.aboutMe = aboutMe;
+		this.time = time;
+		this.day = day;
+		this.service = service;
+	}
+	public ServiceOffered getService() {
+		return service;
+	}
+	public void setService(ServiceOffered service) {
+		this.service = service;
+	}
+	public Users(int id, String firstName, String lastName, String userName, String password, String email, String city,
+			UserRole role, String aboutMe, TimeofDay time, Days day) {
+		super();
+		this.id = id;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.userName = userName;
+		this.password = password;
+		this.email = email;
+		this.city = city;
+		this.role = role;
+		this.aboutMe = aboutMe;
+		this.time = time;
+		this.day = day;
+	}
 	public String getCity() {
 		return city;
 	}
@@ -153,7 +267,8 @@ public class Users {
 	}
 	@Override
 	public int hashCode() {
-		return Objects.hash(aboutMe, city, day, email, firstName, id, lastName, password, role, time, userName);
+		return Objects.hash(aboutMe, city, day, description, email, firstName, id, lastName, password, price, role,
+				service, time, userName);
 	}
 	@Override
 	public boolean equals(Object obj) {
@@ -165,15 +280,18 @@ public class Users {
 			return false;
 		Users other = (Users) obj;
 		return Objects.equals(aboutMe, other.aboutMe) && Objects.equals(city, other.city) && day == other.day
-				&& Objects.equals(email, other.email) && Objects.equals(firstName, other.firstName) && id == other.id
+				&& Objects.equals(description, other.description) && Objects.equals(email, other.email)
+				&& Objects.equals(firstName, other.firstName) && id == other.id
 				&& Objects.equals(lastName, other.lastName) && Objects.equals(password, other.password)
-				&& role == other.role && time == other.time && Objects.equals(userName, other.userName);
+				&& Double.doubleToLongBits(price) == Double.doubleToLongBits(other.price) && role == other.role
+				&& service == other.service && time == other.time && Objects.equals(userName, other.userName);
 	}
 	@Override
 	public String toString() {
 		return "Users [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", userName=" + userName
 				+ ", password=" + password + ", email=" + email + ", city=" + city + ", role=" + role + ", aboutMe="
-				+ aboutMe + ", time=" + time + ", day=" + day + "]";
+				+ aboutMe + ", time=" + time + ", day=" + day + ", service=" + service + ", price=" + price
+				+ ", description=" + description + "]";
 	}
 	public Users(int id, String firstName, String lastName, String userName, String password, String email,
 			String address, UserRole role) {

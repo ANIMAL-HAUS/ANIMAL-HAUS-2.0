@@ -30,7 +30,7 @@ export class AllLoginComponent implements OnInit {
  user!: Users;
   Credentials = {withCredentials:true};
   response:any;
-  msgError="";
+  msgError!: any;
   
   
   constructor(private _http : HttpClient, private router : Router) { }
@@ -50,7 +50,10 @@ export class AllLoginComponent implements OnInit {
                 address: "no address",
                 aboutMe: "none",
                 time: 0,
-                day: 0
+                day: 0,
+               service: 0,
+                price: 0,
+                description: ""
               };
     let Credentials = {withCredentials:true};
     console.log(this.userName);
@@ -66,15 +69,16 @@ export class AllLoginComponent implements OnInit {
     //   complete: () => window.localStorage.setItem("userName", this.userName)
     // });
     let response = this._http.post("http://localhost:5000/petgrooming/authcontroller/login",
-    this.user).toPromise().then( ( data:any) =>{//console.log(data);
+    this.user).toPromise().then((data:any) =>{//console.log(data);
       this.user = data;
      // console.log(this.users.id);
       if (this.user.id ==0){
-        alert("wrong username or password.");
+        document.getElementById("wrong").innerHTML = "wrong username or password";
       }
       else{
         this.router.navigate(['component/contractor-profile']);
         sessionStorage.setItem("aboutMe",this.user.aboutMe);
+        sessionStorage.setItem("username", this.user.userName);
       }
     })
   }

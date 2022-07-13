@@ -1,7 +1,7 @@
 
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
-import {Users } from '../../models/Users';
+import {ServiceOffered, Users } from '../../models/Users';
 import {UserRole } from '../../models/Users';
 
 import { ServicesService } from 'src/app/service/services.service';
@@ -21,7 +21,7 @@ export class RegisterComponent implements OnInit {
   email!: string;
   address!: string;
   aboutMe!: string;
-
+  service!: ServiceOffered;
   // users= {
   //   firstName: String,
   // lastName: String,
@@ -43,7 +43,9 @@ export class RegisterComponent implements OnInit {
 
   // message!: string;
   // password!: string;
-
+  days = ['Weekdays', 'Weekends', 'Anyday']
+  times = ['Morning', 'Afternoon', 'Night', 'Anytime']
+  services = ['Walking', 'Grooming', 'Daycare']
   constructor(private ServicesService: ServicesService,
     private router: Router) { }
 
@@ -65,6 +67,7 @@ export class RegisterComponent implements OnInit {
         this.router.navigate(['component', 'contractor-profile']);
       }
     );
+    sessionStorage.setItem("aboutMe", this.user.aboutMe);
   }
  
 }

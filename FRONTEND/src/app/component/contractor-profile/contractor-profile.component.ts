@@ -19,7 +19,7 @@ const httpOptions = {
 })
 export class ContractorProfileComponent implements OnInit {
   
-  users!: Array<Users>;
+  users!: Users;
   role!: Array<UserRole>;
   action!: string;
   aboutMe!: any;
@@ -27,7 +27,7 @@ export class ContractorProfileComponent implements OnInit {
   num: any;
   Num!: number;
 
-  
+    
   constructor(private ServicesService: ServicesService ,
     private router: Router,
     private activatedRoute: ActivatedRoute,
@@ -35,6 +35,8 @@ export class ContractorProfileComponent implements OnInit {
 
   ngOnInit() {
     this.refreshData();
+    this.aboutMe = sessionStorage.getItem("aboutMe");
+    document.getElementById("h6").innerHTML = this.aboutMe;
     
   }
   refreshData() {
@@ -60,7 +62,7 @@ export class ContractorProfileComponent implements OnInit {
   alert(sessionStorage.getItem("aboutMe"));
   }
   handleSuccessfulResponse(response: Users[]) {
-    this.users = response;
+   // this.users = response;
     console.log(this.users);
   }
 
