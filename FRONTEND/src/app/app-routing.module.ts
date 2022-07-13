@@ -16,7 +16,7 @@ const routes: Routes = [
   {path: 'component/register', component:RegisterComponent},
   
   {path: 'component/contractor-profile', component: ContractorProfileComponent},
-  // {path: 'grooming', component: GroomingComponent},
+  {path: 'component/grooming', component: GroomingComponent},
   
   {path: 'component/all-login', component: AllLoginComponent},
 

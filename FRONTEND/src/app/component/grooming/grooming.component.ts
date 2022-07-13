@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ServicesService } from 'src/app/service/services.service';
 import { Router, ActivatedRoute } from '@angular/router';
-import { UserRole, Users } from '../../models/Users';
+import {  Users } from '../../models/Users';
 
 @Component({
   selector: 'app-grooming',
@@ -10,22 +10,22 @@ import { UserRole, Users } from '../../models/Users';
 })
 export class GroomingComponent implements OnInit {
   users!: Array<Users>;
-  role!: Array<UserRole>;
+ // role!: Array<Role>;
   action!: string;
 
   selectedUser!: Users;
-
+  
 
   constructor(private ServicesService: ServicesService, 
     private router: Router,
     private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
-   this.ServicesService.getContractors()
+    //this.refreshData();
+   this.ServicesService.getContractor()
    .subscribe(res=>{
      this.users = res;
    })
    console.log(this.users);
   }
-  
 }

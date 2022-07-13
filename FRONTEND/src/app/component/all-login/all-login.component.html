@@ -1,7 +1,14 @@
-
+<head>
+    <script>
+        // When the user clicks on <div>, open the popup
+        function myFunction() {
+          var popup = document.getElementById("myPopup");
+          popup.classList.toggle("show");
+        }
+        </script>
+</head>
 
         <div class="card col-md-3">
-            <h3> SIGN IN</h3>
             <BR>
             <form>
                 <label for = "username"><span style="color:red">*</span>Username </label>
@@ -11,7 +18,8 @@
                 <label for = "password"><span style="color:red">*</span>Password </label>
                 <input type = "text" id="password"  placeholder="password" formController= "password" [(ngModel)] = "password" name = "password"> 
                 <br>
-                <br>
+
+
                 <button type = "submit" class ="btn" (click) = onSubmit()>
                     Sign In
                 </button><br>
