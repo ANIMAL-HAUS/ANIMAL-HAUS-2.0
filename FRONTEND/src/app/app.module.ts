@@ -17,6 +17,7 @@ import { HeaderComponent } from './component/header/header.component';
 import { GroomingComponent } from './component/grooming/grooming.component';
 
 import { AllLoginComponent } from './component/all-login/all-login.component';
+import { CartComponent } from './component/cart/cart.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { AllLoginComponent } from './component/all-login/all-login.component';
     
   
     AllLoginComponent,
+                CartComponent,
 
   ],
   imports: [

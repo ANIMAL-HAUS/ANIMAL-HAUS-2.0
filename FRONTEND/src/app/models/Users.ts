@@ -1,40 +1,45 @@
 export class Users {
-    id!: number;
-    firstName!: string;
-    lastName!: string;
-    userName!: string;
-    password!:string;
-    role!: UserRole;
-    email!: string;
-    address!: string;
-    aboutMe!: string;
-    time!: TimeofDay;
-    day!: Days;
-
+  id!: number;
+  firstName!: string;
+  lastName!: string;
+  userName!: string;
+  password!: string;
+  role!: UserRole;
+  email!: string;
+  address!: string;
+  aboutMe!: string;
+  time!: TimeofDay;
+  day!: Days;
+  service!: ServiceOffered;
+  price!: number;
+  description!: string; 
+  
+}
+export enum ServiceOffered {
+  Petgrooming,
+  Dogwalking,
+  Petsetting,
+  All,
 }
 export enum UserRole {
-    Contractor,
-    Customer
+  Contractor,
+  Customer,
 }
 
-export enum Categories{
-    Walking,
-    Grooming,
-    DayCare
+export enum Categories {
+  Walking,
+  Grooming,
+  DayCare,
 }
 
-export enum Days{
-    Weekends, 
-    WeekDays, 
-    AnyDay
-
-
+export enum Days {
+  Weekends,
+  WeekDays,
+  AnyDay,
 }
-export enum TimeofDay{
-
-    Morning,
-    Afternoon,
-    night,
-    Anytime
-
+export enum TimeofDay {
+  Morning,
+  Afternoon,
+  night,
+  Anytime,
 }

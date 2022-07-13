@@ -1,8 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
-import { Product } from 'src/app/models/Product';
-import { Users, UserRole } from 'src/app/models/Users';
-import { ServicesService } from 'src/app/service/services.service';
+import { Component, OnInit } from "@angular/core";
+import { ServicesService } from "src/app/service/services.service";
+import { Router, ActivatedRoute } from "@angular/router";
+import { Users } from "../../models/Users";
 
 @Component({
   selector: "app-grooming",
@@ -11,23 +10,39 @@ import { ServicesService } from 'src/app/service/services.service';
 })
 export class GroomingComponent implements OnInit {
   users!: Array<Users>;
-  role!: Array<UserRole>;
+  // role!: Array<Role>;
   action!: string;
 
-  product!: Array<Product>;
   selectedUser!: Users;
-  createdProduct!: Product;
 
   constructor(
-    private service: ServicesService,
+    private ServicesService: ServicesService,
     private router: Router,
     private activatedRoute: ActivatedRoute
   ) {}
-  addContractorProduct() {
-    this.createdProduct = new Product();
-    this.router.navigate(["component", "grooming"], {
-      queryParams: { action: "add" },
+
+  ngOnInit(): void {
+    //this.refreshData();
+    this.ServicesService.getContractors().subscribe((res) => {
+      this.users = res;
     });
+    console.log(this.users);
   }
-  ngOnInit(): void {}
+  // refreshData() {
+  //   this.ServicesService.getContractors().subscribe(
+  //     response => this.handleSuccessfulResponse(response),
+  //   );
+
+  // this.activatedRoute.queryParams.subscribe(
+  //   (params) => {
+  //     this.action = params['action'];
+  //     const selectedUserId = params['id'];
+  //     if (selectedUserId) {
+  //     }
+  //   }
+  // );
 }
+// handleSuccessfulResponse(response: Users[]) {
+//   // this.users = response;
+//    console.log(this.users);
+//  }

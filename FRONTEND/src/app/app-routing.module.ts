@@ -19,6 +19,7 @@ const routes: Routes = [
   // {path: 'grooming', component: GroomingComponent},
   
   {path: 'component/all-login', component: AllLoginComponent},
+  {path: 'component/cart', component: GroomingComponent}
 
   
 ];
