@@ -59,5 +59,10 @@ public class CartServices {
 		Users user =us.getUserById(userid);
 		return CartDAO.checkout(user.getId(),p);
 	}
-	
+	public void removeItem(int id) {
+		CartDAO.removeItem(id);
+	}
+	public void clearItems(String username) {
+		CartDAO.clearItems(username);
+	}
 }

@@ -5,6 +5,7 @@ import java.util.List;
 
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
+import javax.transaction.Transactional;
 
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
@@ -97,8 +98,38 @@ public static List<Cart> getOrderbyUsername(String username) {
 	} catch(Exception e) {
 		return null;
 	}
-	
+
 	
 }
+@Transactional
+public static void removeItem(int id){
+	Session session = HibernateUtil.getSession();
+	Cart cart = session.get(Cart.class, id);
+	System.out.println(cart);
+	session.beginTransaction();
+	session.delete(cart);
+	session.getTransaction().commit();
+	HibernateUtil.closeSession();
+}
+@Transactional
+public static void clearItems(String username) {
+	Session ses = HibernateUtil.getSession(); //This opens the session
+	//Users user = ses.(Users.class, username);
+	Query q = ses.createQuery("delete FROM Cart WHERE username = ?1");
+	
+	q.setParameter(1,username);
+	q.executeUpdate();
+	HibernateUtil.closeSession();
+//	try {
+//		List<Cart> userList = q.getResultList();
+//		HibernateUtil.closeSession();
+//		
+//		System.out.println("user exist");
+//		return userList;
+//	} catch(Exception e) {
+//		return null;
+//	}
 
+	
+}
 }

@@ -97,5 +97,17 @@ public class CartController {
 		ResponseEntity.status(HttpStatus.CREATED).body(cart);
 		 return ResponseEntity.status(201).body(cart);
 	}
+	@PostMapping("/removeitem")
+	public static void removeitem(@RequestBody int id){
+		
+		cs.removeItem(id);
+		ResponseEntity.status(HttpStatus.CREATED).body("removed item");
+		
+	}
+	@PostMapping("/clearitems")
+	public static void clearitems(@RequestBody Cart user){
+		cs.clearItems(user.getUsername());
+		ResponseEntity.status(HttpStatus.CREATED).body("cleared items");
+	}
 }
 	

@@ -40,6 +40,12 @@ export class ServicesService {
     }))
 
   }
+  removeitem(id: number){
+    return this.httpClient.post<any>('http://localhost:5000/petgrooming/cartcontroller/removeitem',id)
+    .pipe(map((res:any)=>{
+      return res;
+    }))
 
+  }
   
 }
