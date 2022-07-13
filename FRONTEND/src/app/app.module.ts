@@ -18,6 +18,7 @@ import { GroomingComponent } from './component/grooming/grooming.component';
 
 import { AllLoginComponent } from './component/all-login/all-login.component';
 import { CheckoutsComponentsComponent } from './checkouts-components/checkouts-components.component';
+import { PaymentComponent } from './payment/payment.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { CheckoutsComponentsComponent } from './checkouts-components/checkouts-c
     
   
     AllLoginComponent,
-                CheckoutsComponentsComponent
+                CheckoutsComponentsComponent,
+                PaymentComponent
 
   ],
   imports: [

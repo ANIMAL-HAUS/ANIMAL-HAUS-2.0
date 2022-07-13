@@ -27,12 +27,7 @@ export class ServicesService {
   addCustomer(newUser: Users) {
     return this.httpClient.post<Users>('http://localhost:5000/petgrooming/authcontroller', newUser);   
   }
-  getContractor(){
-    return this.httpClient.get<any>('http://localhost:5000/petgrooming/usercontroller/getallcontractors')
-    .pipe(map((res:any)=>{
-      return res;
-    }))
-  }
+
   getCart(cart: Cart){
     return this.httpClient.post<any>('http://localhost:5000/petgrooming/cartcontroller/getCartbyUsername',cart)
     .pipe(map((res:any)=>{
