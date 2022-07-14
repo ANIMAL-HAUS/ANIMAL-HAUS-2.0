@@ -22,16 +22,7 @@ export class RegisterComponent implements OnInit {
   address!: string;
   aboutMe!: string;
   service!: ServiceOffered;
-  // users= {
-  //   firstName: String,
-  // lastName: String,
-  // userName: String,
-  // password:String,
-  // role: UserRole,
-  // email: String,
-  // address: String,
-  // aboutme: String,
-  // }
+
 
   @Input()
   user!: Users;
