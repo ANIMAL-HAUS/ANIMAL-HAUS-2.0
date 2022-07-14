@@ -15,7 +15,7 @@ export class CheckoutsComponentsComponent implements OnInit {
   carts!: Array<Cart> | undefined;
   total :number = 0;
   cart!:Cart;
-  
+  id!: number;
  
  constructor(private ServicesService: ServicesService, 
   private router: Router,
@@ -38,7 +38,24 @@ export class CheckoutsComponentsComponent implements OnInit {
      
     }
     checkout(){
-      alert("You will be emailed your receipt!");
+
+      this.ServicesService.removeitems(this.cart)
+      .subscribe(res=>{
+       location.reload();
+      })
+      //location.reload();
+      this.router.navigate(['payment']);
+    }
+
+
+    remove(c: Cart){
+      this.id = c.id;
+      console.log(this.id);
+      this.ServicesService.removeitem(this.id)
+   .subscribe(res=>{
+    location.reload();
+   })
+   location.reload();
     }
 
 }

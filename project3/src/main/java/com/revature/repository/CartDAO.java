@@ -5,12 +5,14 @@ import java.util.List;
 
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
+import javax.transaction.Transactional;
 
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
+import org.springframework.stereotype.Service;
 
 import com.revature.models.Cart;
 import com.revature.models.OrderHistory;
@@ -18,7 +20,8 @@ import com.revature.models.Product;
 import com.revature.models.Users;
 import com.revature.services.CartServices;
 import com.revature.utilities.HibernateUtil;
-
+@Service
+@Transactional
 public class CartDAO {
 	private static ArrayList<Cart> products = new ArrayList<Cart>();
 	@PersistenceContext
@@ -97,8 +100,42 @@ public static List<Cart> getOrderbyUsername(String username) {
 	} catch(Exception e) {
 		return null;
 	}
-	
+
 	
 }
 
+public static void removeItem(int id){
+	Session session = HibernateUtil.getSession();
+	Cart cart = session.get(Cart.class, id);
+	System.out.println(cart);
+	session.beginTransaction();
+	session.delete(cart);
+	session.getTransaction().commit();
+	HibernateUtil.closeSession();
+}
+
+
+public static void clearItems(String username) {
+	
+	Session ses = HibernateUtil.getSession(); //This opens the session
+	Transaction txn = ses.beginTransaction();
+	//Users user = ses.(Users.class, username);
+	Query q = ses.createQuery("DELETE FROM Cart WHERE username = ?1");
+	
+	q.setParameter(1,username);
+	q.executeUpdate();
+	txn.commit();
+	HibernateUtil.closeSession();
+//	try {
+//		List<Cart> userList = q.getResultList();
+//		HibernateUtil.closeSession();
+//		
+//		System.out.println("user exist");
+//		return userList;
+//	} catch(Exception e) {
+//		return null;
+//	}
+
+	
+}
 }

@@ -7,8 +7,9 @@ import { DashboardComponent } from './component/dashboard/dashboard.component';
 import { GroomingComponent } from './component/grooming/grooming.component';
 
 import { RegisterComponent } from './component/register/register.component';
-import {CheckoutComponent} from './component/checkout/checkout.component'
-import {CheckoutsComponentsComponent} from './checkouts-components/checkouts-components.component'
+import {CheckoutComponent} from './component/checkout/checkout.component';
+import {CheckoutsComponentsComponent} from './checkouts-components/checkouts-components.component';
+import { PaymentComponent } from './payment/payment.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
@@ -19,6 +20,7 @@ const routes: Routes = [
    {path: 'component/grooming', component: GroomingComponent},
   {path: 'checkouts', component: CheckoutsComponentsComponent},
   {path: 'component/all-login', component: AllLoginComponent},
+ {path: 'payment', component: PaymentComponent}
 
   
 ];

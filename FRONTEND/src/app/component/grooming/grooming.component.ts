@@ -52,22 +52,3 @@ export class GroomingComponent implements OnInit {
     }
   
 
-  // refreshData() {
-  //   this.ServicesService.getContractors().subscribe(
-  //     response => this.handleSuccessfulResponse(response),
-  //   );
-
-    // this.activatedRoute.queryParams.subscribe(
-    //   (params) => {
-    //     this.action = params['action'];
-    //     const selectedUserId = params['id'];
-    //     if (selectedUserId) {
-    //     }
-    //   }
-    // );
-  
-  // handleSuccessfulResponse(response: Users[]) {
-  //   // this.users = response;
-  //    console.log(this.users);
-  //  }
-    

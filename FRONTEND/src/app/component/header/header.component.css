@@ -8,13 +8,15 @@
   color: black;
 }
 
-
-img {
+li img {
   height: 8em;
   width: 8em;
   clip-path: circle();
   opacity: 1;
 }
+
+
+
 
 a:hover {
   opacity: .7;

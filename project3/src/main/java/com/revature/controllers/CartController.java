@@ -48,20 +48,20 @@ public class CartController {
 			return ResponseEntity.status(HttpStatus.OK).body(cart);
 		
 	}
-		@PostMapping("/removeproducttocart")
-		public static ResponseEntity<List<Product>> removeProduct(@RequestBody int id){
-			//System.out.println(product.getId());
-		
-			if(id == 0) {
-				System.out.println("--------------------------------");
-				return ResponseEntity.status(HttpStatus.NO_CONTENT).body(null);
-				
-			}else {	
-			
-				p.remove(id);
-				return ResponseEntity.status(HttpStatus.OK).body(p);
-			}
-}
+//		@PostMapping("/removeproducttocart")
+//		public static ResponseEntity<List<Product>> removeProduct(@RequestBody int id){
+//			//System.out.println(product.getId());
+//		
+//			if(id == 0) {
+//				System.out.println("--------------------------------");
+//				return ResponseEntity.status(HttpStatus.NO_CONTENT).body(null);
+//				
+//			}else {	
+//			
+//				p.remove(id);
+//				return ResponseEntity.status(HttpStatus.OK).body(p);
+//			}
+//}
 	@PostMapping("/checkout")
 	public static ResponseEntity<Double> checkout(@RequestBody int userid){
 		//System.out.println(product.getId());
@@ -76,20 +76,20 @@ public class CartController {
 			return ResponseEntity.status(HttpStatus.OK).body(total);
 		}
 }	
-	@PostMapping("/getOrderHistory")
-	public static ResponseEntity<List<OrderHistory>> getOrderHisoty(@RequestBody int userid){
-		//System.out.println(product.getId());
-	
-		if(userid == 0) {
-			System.out.println("--------------------------------");
-			return ResponseEntity.status(HttpStatus.NO_CONTENT).body(null);
-			
-		}else {	
-
-			List<OrderHistory> oh = cs.getOrderHistory(userid);
-			return ResponseEntity.status(HttpStatus.OK).body(oh);
-		}
-	}
+//	@PostMapping("/getOrderHistory")
+//	public static ResponseEntity<List<OrderHistory>> getOrderHisoty(@RequestBody int userid){
+//		//System.out.println(product.getId());
+//	
+//		if(userid == 0) {
+//			System.out.println("--------------------------------");
+//			return ResponseEntity.status(HttpStatus.NO_CONTENT).body(null);
+//			
+//		}else {	
+//
+//			List<OrderHistory> oh = cs.getOrderHistory(userid);
+//			return ResponseEntity.status(HttpStatus.OK).body(oh);
+//		}
+//	}
 	@PostMapping("/getCartbyUsername")
 	public static ResponseEntity<List<Cart>> getCartByUsername(@RequestBody Cart user){
 		
@@ -97,5 +97,16 @@ public class CartController {
 		ResponseEntity.status(HttpStatus.CREATED).body(cart);
 		 return ResponseEntity.status(201).body(cart);
 	}
+	@PostMapping("/removeitem")
+	public static void removeitem(@RequestBody int id){
+		
+		cs.removeItem(id);
+		ResponseEntity.status(HttpStatus.CREATED).body("removed item");
+		
+	}
+	@PostMapping("/clearitems")
+	public static void clearitems(@RequestBody Cart user){
+		cs.clearItems(user.getUsername());
+		ResponseEntity.status(HttpStatus.CREATED).body("cleared items");
+	}
 }
-	

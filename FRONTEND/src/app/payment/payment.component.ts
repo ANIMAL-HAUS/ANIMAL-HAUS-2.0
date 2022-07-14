@@ -12,4 +12,9 @@ export class PaymentComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  done(){
+
+    alert("Payment Submitted!");
+
+  }
 }

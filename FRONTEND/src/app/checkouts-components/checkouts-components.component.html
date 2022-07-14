@@ -8,15 +8,17 @@
   <tr>
     <th><li>
       Services .............................................................................. ${{cartt.price}} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      <button type = "submit" class ="bttn" ></button>
+      <button type = "submit" class ="btn" (click) = remove(cartt)>
+        remove
+    </button>
     </li></th>
   </tr>
 
   <tr>
-    <td><ul id="list2"><li>Contractor: {{cartt.username}}</li>
-      <li>Name: {{cartt.contractorFirstName}} {{cart.contractorLastName}}</li>
+    <td><ul id="list2"><li>Booked by: {{cartt.username}}</li>
+      <li>Contractor: {{cartt.contractorFirstName}} {{cartt.contractorLastName}}</li>
     <li>Booked for: {{cartt.service}}</li>
-  <li>Date and Time: ##-##-#### @ ##:## AM/PM</li></ul></td>
+ </ul></td>
     <td></td>
 
   </tr>
