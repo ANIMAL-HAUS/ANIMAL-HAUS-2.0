@@ -10,9 +10,15 @@
 
 
 img {
-  height: 120px;
-  width: 120px;
+  height: 8em;
+  width: 8em;
   clip-path: circle();
+  opacity: 1;
+}
+
+a:hover {
+  opacity: .7;
+    transform: scale(1.05);
 }
 
 .groom, .groom a {
@@ -37,30 +43,19 @@ img {
   text-decoration: none;
 }
 
-/* h3 {
-  display: inline-block;
-  padding-left: 20px;
-} */
+
 
 .login {
-  background-color: white;
+  background: white;
   border-color: rgb(0, 136, 255);
   border-style: solid;
-  margin-right: 20px;
 }
 
-.profile {
-  background-color: white;
-  border-color: rgb(0, 136, 255);
-  border-style: solid;
-  margin-right: 20px;
-}
 .register {
-  background-color: white;
+  background: white;
   border-color: blue;
   border-style: solid;
 }
-
 
 .container {
   display: inline-block;

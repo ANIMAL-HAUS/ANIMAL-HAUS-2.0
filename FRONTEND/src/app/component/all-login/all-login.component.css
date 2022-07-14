@@ -16,6 +16,11 @@
     border-width: 0px;
 }
 
+.btn:hover {
+  opacity: .7;
+    transform: scale(1.05);
+}
+
 
 input {
     height: 20px;
