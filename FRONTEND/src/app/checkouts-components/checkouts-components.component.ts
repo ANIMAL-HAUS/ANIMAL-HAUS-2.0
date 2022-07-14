@@ -39,6 +39,11 @@ export class CheckoutsComponentsComponent implements OnInit {
     }
     checkout(){
       alert("You will be emailed your receipt!");
+      this.ServicesService.removeitems(this.cart)
+      .subscribe(res=>{
+       location.reload();
+      })
+      location.reload();
     }
     remove(c: Cart){
       this.id = c.id;

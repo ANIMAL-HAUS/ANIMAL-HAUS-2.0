@@ -47,5 +47,12 @@ export class ServicesService {
     }))
 
   }
+  removeitems(username: Cart){
+    return this.httpClient.post<any>('http://localhost:5000/petgrooming/cartcontroller/clearitems',username)
+    .pipe(map((res:any)=>{
+      return res;
+    }))
+
+  }
   
 }

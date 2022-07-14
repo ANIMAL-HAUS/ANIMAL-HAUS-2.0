@@ -12,6 +12,7 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
+import org.springframework.stereotype.Service;
 
 import com.revature.models.Cart;
 import com.revature.models.OrderHistory;
@@ -19,7 +20,8 @@ import com.revature.models.Product;
 import com.revature.models.Users;
 import com.revature.services.CartServices;
 import com.revature.utilities.HibernateUtil;
-
+@Service
+@Transactional
 public class CartDAO {
 	private static ArrayList<Cart> products = new ArrayList<Cart>();
 	@PersistenceContext
@@ -101,7 +103,7 @@ public static List<Cart> getOrderbyUsername(String username) {
 
 	
 }
-@Transactional
+
 public static void removeItem(int id){
 	Session session = HibernateUtil.getSession();
 	Cart cart = session.get(Cart.class, id);
@@ -111,14 +113,18 @@ public static void removeItem(int id){
 	session.getTransaction().commit();
 	HibernateUtil.closeSession();
 }
-@Transactional
+
+
 public static void clearItems(String username) {
+	
 	Session ses = HibernateUtil.getSession(); //This opens the session
+	Transaction txn = ses.beginTransaction();
 	//Users user = ses.(Users.class, username);
-	Query q = ses.createQuery("delete FROM Cart WHERE username = ?1");
+	Query q = ses.createQuery("DELETE FROM Cart WHERE username = ?1");
 	
 	q.setParameter(1,username);
 	q.executeUpdate();
+	txn.commit();
 	HibernateUtil.closeSession();
 //	try {
 //		List<Cart> userList = q.getResultList();
